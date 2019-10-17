@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .leftBox {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: url(img/as.jpg) no-repeat center center/100% 100%;
+        }
+        
+        .leftboxxx {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 99;
+        }
+        
+        .leftBoxeSmoll {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            background-color: rgba(0, 0, 0, .5);
+            display: none;
+        }
+        
+        .rightBox {
+            width: 600px;
+            height: 600px;
+            position: absolute;
+            left: 350px;
+            top: 0;
+            overflow: hidden;
+            display: none;
+        }
+        
+        .rightBigBox {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1800px;
+            height: 1800px;
+            background: url(img/as.jpg) no-repeat center center/100% 100%;
+        }
+        /* .rightBigBox>img {
+            width: 100%;
+            height: 100%;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="leftBox">
+        <div class="leftboxxx"></div>
+        <div class="leftBoxeSmoll">
+
+        </div>
+    </div>
+    <div class="rightBox">
+        <div class="rightBigBox">
+            <!-- <img src="img/as.jpg" alt=""> -->
+        </div>
+    </div>
+</body>
+<script src="js公共/jquery-3.4.1.min.js"></script>
+<script>
+    $(".leftBox").on("mouseover", function() {
+        // console.log(11);
+        // console.log($(".leftBoxeSmoll"));
+        $(".leftBoxeSmoll").css({
+            display: "block",
+        })
+        $(".rightBox").css({
+            display: "block",
+        })
+
+        $(".leftboxxx").on("mousemove", function(e) {
+            let left = e.offsetX;
+            let top = e.offsetY;
+            if (left < 50) {
+                left = 50;
+            }
+            if (left > 250) {
+                left = 250;
+            }
+            if (top < 50) {
+                top = 50;
+            }
+            if (top > 250) {
+                top = 250;
+            }
+            $(".leftBoxeSmoll").css({
+                left: left - 50 + "px",
+                top: top - 50 + "px"
+            })
+            $(".rightBigBox").css({
+                display: "block",
+                left: -6 * (left - 50) + "px",
+                top: -6 * (top - 50) + "px"
+            })
+        });
+
+        // console.dir($(".leftBox"));
+    });
+    $(".leftBox").on("mouseout", function(e) {
+        $(".rightBigBox").css({
+            display: "none",
+        })
+        $(".leftBoxeSmoll").css({
+            display: "none"
+        })
+    });
+    // console.dir($(".leftBox"));
+</script>
+
+</html>

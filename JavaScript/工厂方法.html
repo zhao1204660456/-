@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>工厂方法</title>
+</head>
+
+<body>
+    <script>
+        // function stu() {
+        //     var student = {};
+        //     student.name = "赵哥";
+        //     student.age = "男";
+        //     student.say = function() {
+        //         console.log("say");
+        //     };
+        //     // console.log(student);
+        //     return student;
+        // }
+        // console.log(stu());
+        // var a = stu();
+        // var b = stu();
+        // console.log(a, b);
+        function Ani(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            // this.say = () => {
+            //         console.log('呜呜呜' + say);
+            //     }
+            // this.eat = (foot) => {
+            //     console.log("我吃" + foot);
+            // }
+        }
+        Ani.prototype.say = (say) => {
+            console.log('呜呜呜' + say);
+        }
+        Ani.prototype.eat = (foot) => {
+                console.log("我吃" + foot);
+            }
+            // eat.prototype.aa = () => {
+            //     console.log('afsaf');
+            // }
+
+        var dog = new Ani("狗", 3, "公", "你好");
+        dog.eat("骨头");
+        console.log(dog);
+    </script>
+</body>
+
+</html>

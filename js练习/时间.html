@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        今距中华人民共和国成立70周年还有
+        <span>00</span>天
+        <span>00</span>时
+        <span>00</span>分
+        <span>00</span>秒
+    </div>
+</body>
+<script>
+    // var spans = document.querySelectorAll('.box span');
+    // var futureDat = new Date(2019, 9, 01, 0, 0, 0).getTime; //获取10月1日的时间
+    // console.log(new Date(2019, 9, 01, 0, 0, 0));
+    // console.log(futureDat);
+    // var timer = setInterval(() => {
+    //     var nowDate = new Date().getTime(); //现在的时间
+    //     almost = futureDat - nowDate; //时间差
+    //     var s = Math.floor(almost / 1000 % 60);
+    //     s = s > 9 ? s : "0" + s;
+    //     var m = Math.floor(almost / 1000 / 60 % 60);
+    //     m = m > 9 ? m : "0" + m;
+    //     var h = Math.floor(almost / 1000 / 60 / 60 % 24);
+    //     h = h > 9 ? h : "0" + h;
+    //     var d = Math.floor(almost / 1000 / 60 / 60 / 24);
+    //     d = d > 9 ? d : "0" + d;
+    //     spans[0].innerHTML = d;
+    //     spans[1].innerHTML = h;
+    //     spans[2].innerHTML = m;
+    //     spans[3].innerHTML = s;
+    // }, 1000)
+
+    // setInterval(() => {
+    //     var da = new Date();
+    //     var h = da.getHours();
+    //     // console.log(h);
+    //     spans[1].innerHTML = h;
+    //     var m = da.getMinutes();
+    //     // console.log(m);
+    //     spans[2].innerHTML = m;
+    //     var s = da.getSeconds();
+    //     // console.log(s);
+    //     spans[3].innerHTML = s;
+    // }, 1000)
+
+    var cc = Date.parse('1995-12-17T03:24:00');
+    console.log(cc);
+</script>
+
+</html>

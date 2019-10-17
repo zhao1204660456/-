@@ -1,0 +1,96 @@
+
+/*----------用来移除向下箭头----------*/
+input[type="date"]::-webkit-calendar-picker-indicator {
+   display: none;
+}
+ 
+/*----------用来移除上下箭头----------*/
+input[type="date"]::-webkit-inner-spin-button {
+	display: none;
+	}
+ 
+/*----------用来移除叉叉按钮----------*/
+input[type="date"]::-webkit-clear-button{
+   display:none;
+}
+
+ 
+
+下面，我们详细讲解：
+
+1.时间选择的种类:
+HTML代码： 
+选择日期：<input type="date" value="2017-06-01" /> 
+选择时间：<input type="time" value="22:52" /> 
+选择星期：<input type="week" /> 
+选择月份：<input type="month" />
+
+2.对日期时间控件的样式进行修改
+目前WebKit下有如下9个伪元素可以改变日期控件的UI：
+
+::-webkit-datetime-edit – 控制编辑区域的
+::-webkit-datetime-edit-fields-wrapper – 控制年月日这个区域的
+::-webkit-datetime-edit-text – 这是控制年月日之间的斜线或短横线的
+::-webkit-datetime-edit-month-field – 控制月份
+::-webkit-datetime-edit-day-field – 控制具体日子
+::-webkit-datetime-edit-year-field – 控制年文字, 如2017四个字母占据的那片地方
+::-webkit-inner-spin-button – 这是控制上下小箭头的
+::-webkit-calendar-picker-indicator – 这是控制下拉小箭头的
+::-webkit-clear-button –这是控制清除按钮的
+以下的囊括了date，datetime，week，time所用的伪元素： 
+input::-webkit-datetime-edit{} 
+input::-webkit-datetime-edit-fields-wrapper{} 
+input::-webkit-datetime-edit-ampm-field{} 
+input::-webkit-datetime-edit-day-field{} 
+input::-webkit-datetime-edit-hour-field{} 
+input::-webkit-datetime-edit-millisecond-field{} 
+input::-webkit-datetime-edit-minute-field{} 
+input::-webkit-datetime-edit-month-field{} 
+input::-webkit-datetime-edit-second-field{} 
+input::-webkit-datetime-edit-week-field{} 
+input::-webkit-datetime-edit-year-field{} 
+input::-webkit-datetime-edit-ampm-field:focus{} 
+input::-webkit-datetime-edit-day-field:focus{} 
+input::-webkit-datetime-edit-hour-field:focus{} 
+input::-webkit-datetime-edit-millisecond-field:focus{} 
+input::-webkit-datetime-edit-minute-field:focus{} 
+input::-webkit-datetime-edit-month-field:focus{} 
+input::-webkit-datetime-edit-second-field:focus{} 
+input::-webkit-datetime-edit-week-field:focus{} 
+input::-webkit-datetime-edit-year-field:focus{} 
+input::-webkit-datetime-edit-year-field[disabled]{} 
+input::-webkit-datetime-edit-month-field[disabled]{} 
+input::-webkit-datetime-edit-week-field[disabled]{} 
+input::-webkit-datetime-edit-day-field[disabled]{} 
+input::-webkit-datetime-edit-ampm-field[disabled]{} 
+input::-webkit-datetime-edit-hour-field[disabled]{} 
+input::-webkit-datetime-edit-millisecond-field[disabled]{} 
+input::-webkit-datetime-edit-minute-field[disabled]{} 
+input::-webkit-datetime-edit-second-field[disabled]{} 
+input::-webkit-datetime-edit-text{} 
+input::-webkit-inner-spin-button{} 
+input::-webkit-calendar-picker-indicator{} 
+input::-webkit-calendar-picker-indicator:hover{}
+
+date类型改变行高和高度那个小三角并不会根据大小调整，实在太丑了，所以决定把它隐藏掉。 
+下面的css可以去掉date中上下小三角，但是保留input类型为number的小三角。 
+input[type=date]::-webkit-inner-spin-button { visibility: hidden; } 
+input类型为date的输入框有以下属性，可以根据自己的需求自行调整。 
+::-webkit-datetime-edit { padding: 1px; background: url(../selection.gif); } 
+::-webkit-datetime-edit-fields-wrapper { background-color: #eee; } 
+::-webkit-datetime-edit-text { color: #4D90FE; padding: 0 .3em; } 
+::-webkit-datetime-edit-year-field { color: purple; } 
+::-webkit-datetime-edit-month-field { color: blue; } 
+::-webkit-datetime-edit-day-field { color: green; } 
+::-webkit-inner-spin-button { visibility: hidden; } 
+::-webkit-calendar-picker-indicator { 
+border: 1px solid #ccc; 
+border-radius: 2px; 
+box-shadow: inset 0 1px #fff, 0 1px #eee; 
+background-color: #eee; 
+background-image: -webkit-linear-gradient(top, #f0f0f0, #e6e6e6); 
+color: #666; 
+}
+————————————————
+版权声明：本文为CSDN博主「itwangyang520」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/itwangyang520/article/details/82464764

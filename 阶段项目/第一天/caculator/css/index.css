@@ -1,0 +1,95 @@
+body{
+    margin: 0;
+    background-color: #edeff0;
+}
+
+.all{
+    width: 500px;
+    height: 888px;
+    background-color: blue;
+    margin: 0 auto;
+}
+/* 头部开始 */
+.head{
+    height: 78px;
+    background-color: #57B2E6;
+}
+span{
+    color: #ffffff;
+    line-height: 78px;
+    margin-left: 23px;
+    size: 24px;
+}
+.dian{
+    width: 60px;
+    height: 78px;
+    float: right;
+}
+.dian1{
+    margin-left: 23px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    margin-bottom: 2.5px;
+}
+.dian2{
+    margin-top: 26px;
+}
+/* 头部结束 */
+/* 屏幕显示开始 */
+.pm{
+    height: 259px;
+    background-color: #F0F0F0;
+}
+.xian{
+    width: 2px;
+    height: 76px;
+    background-color: #00a0c1;
+    float: right;
+    margin-top: 8px;
+    margin-right: 15px;
+}
+
+/* 屏幕显示结束 */
+/* 下拉开始 */
+.xl{
+    height: 47px;
+    background-color: #DFE3E4;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+/* 下拉结束 */
+/* 底部开始 */
+.foot{
+    height: 504px;
+    background-color: #dee2e3;
+}
+.aj{
+    width: 123px;
+    height: 99px;
+    background-color:#f2f4f4;
+    float: left;
+    margin-right: 2.6px;
+    font-size: 40px;
+    line-height: 99px;
+    text-align: center;
+    color: #4e95d7;
+    margin-bottom: 2.2px;
+}
+.aj1{
+    margin-right: 0px;
+}
+.aj2{
+    margin-bottom: 0;
+}
+.aj6{
+    color: #235760;
+    background-color: #fafafa;
+}
+.aj7{
+    color: #66b96a;
+}
+/* 底布结束 */

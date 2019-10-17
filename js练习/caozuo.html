@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>操作元素的属性</title>
+    <style>
+        .box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: violet;
+            transition: all 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+    <script>
+        var box = document.querySelector('.box');
+        box.setAttribute("zhao", "ge");
+        var zhao = box.getAttribute("zhao");
+        var wid = 0;
+        var top = 0;
+        //放大
+        function magnify() {
+            setTimeout(function() {
+                box.style.cssText = `width:200px;height:200px;background-color:red;`;
+            }, 1000)
+        }
+
+        function shrink() {
+            setTimeout(function() {
+                box.style.cssText = `width:100px;height:100px;background-color:blue;`;
+            }, 1000)
+        }
+
+        setInterval(function() {
+            if (wid < 1000) {
+                wid++;
+                box.style.left = wid + "px";
+            }
+            if (wid == 1000) {
+                top++;
+                box.style.top = top + "px";
+            }
+        }, 50)
+    </script>
+</body>
+
+</html>

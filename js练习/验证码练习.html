@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>验证码</title>
+    <style>
+        canvas {
+            width: 200px;
+            height: 60px;
+        }
+        
+        .button {
+            width: 100px;
+            height: 50px;
+            background-color: violet;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas class="canvas"></canvas>
+    <input type="button" class="button" value="提交">
+</body>
+<script>
+    let button = document.querySelector('.button');
+    let canvas = document.querySelector('canvas');
+    let srty = document.querySelector('.canvas');
+
+
+    let num = "q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,z,x,c,v,b,n,m,Q,W,E,R,T,Y,U,I,O,P,L,K,J,H,G,F,D,S,A,Z,X,C,V,B,N,M,1,2,3,4,5,6,7,8,9,0";
+    let rannum = num.split(',');
+    srty.onclick = function() {
+        show();
+    }
+    show();
+
+    function show() {
+        let cwidth = srty.offsetWidth;
+        let cheight = srty.offsetHeight;
+
+        canvas.width = cwidth;
+        canvas.height = cheight;
+        let context = canvas.getContext('2d');
+        canvas.style.background = ranColor();
+        //设置随机数
+        for (let i = 0; i < 4; i++) {
+            let x = 10 + 50 * i;
+            let y = 40 + Math.floor(Math.random() * 10);
+            let text = rannum[parseInt(Math.floor(Math.random() * rannum.length))];
+            context.font = "bold 40px 微软雅黑";
+            context.fillStyle = ranColor();
+            context.fillText(text, x, y);
+        }
+        //设置点
+        for (let i = 0; i < 30; i++) {
+            let starx = Math.floor(Math.random() * cwidth);
+            let stary = Math.floor(Math.random() * cheight);
+            context.strokeStyle = ranColor();
+            context.beginPath();
+            context.moveTo(starx, stary);
+            context.lineTo(starx + 2, stary + 2);
+            context.stroke();
+        }
+        //设置线
+        for (let i = 0; i < 5; i++) {
+            let starx = Math.floor(Math.random() * cwidth);
+            let stary = Math.floor(Math.random() * cheight);
+            let endx = Math.floor(Math.random() * cwidth);
+            let endy = Math.floor(Math.random() * cheight);
+            context.strokeStyle = ranColor();
+            context.beginPath();
+            context.moveTo(starx, stary);
+            context.lineTo(endx, endy);
+            context.stroke();
+        }
+    }
+    //设置颜色
+    function ranColor() {
+        let r = parseInt(Math.floor(Math.random() * 256));
+        let g = parseInt(Math.floor(Math.random() * 256));
+        let b = parseInt(Math.floor(Math.random() * 256));
+        return "rgb(" + r + "," + g + "," + b + ")";
+    }
+</script>
+
+</html>

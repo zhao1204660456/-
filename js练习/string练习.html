@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sting练习</title>
+</head>
+
+<body>
+    <script>
+        // var str = "qwertye";
+        // var lrn = str.length;
+        // console.log(lrn);
+        // console.log(str);
+        // var a = str.charAt(2);
+        // console.log(a);
+        // console.log(str);
+        // var s = str.charCodeAt(2);
+        // console.log(s);
+        // console.log(str);
+        // var q = String.fromCharCode(99);
+        // console.log(q);
+        // console.log(str);
+        // var w = str.indexOf('e');
+        // console.log(w);
+        // console.log(str);
+        // var r = str.lastIndexOf('e');
+        // console.log(r);
+        // console.log(str);
+        // var cd = str.replace('ty', '123');
+        // console.log(cd);
+        // console.log(str);
+        // var qq = str.slice(1, 4);
+        // console.log(qq);
+        // console.log(str);
+        var c = {
+            "name": "name",
+            "age": 12,
+            "sex": "男"
+        }
+        var d = JSON.stringify(c);
+        console.log(c);
+        console.log(d);
+        var e = JSON.parse(d);
+        console.log(e);
+
+
+        var arr = "adakfdfsdfsadaf";
+        var aa = arr.padStart(5);
+        console.log(arr);
+        console.log(aa);
+        //开头位置添加
+        var aa1 = arr.padStart(20, "qqq");
+        console.log(aa1);
+        //结尾位置添加
+        var aa2 = arr.padEnd(20, "qqq");
+        console.log(aa2);
+        var dat = new Date();
+        var c = String(dat.getSeconds()).padStart(3, 0);
+        console.log(c);
+    </script>
+</body>
+
+</html>s

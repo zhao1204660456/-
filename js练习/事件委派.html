@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件委派</title>
+    <style>
+        body,
+        ul,
+        li {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        
+        html {
+            height: 100%;
+        }
+        
+        body {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .ul-ul {
+            height: auto;
+            width: 200px;
+        }
+        
+        .ul-li {
+            height: 40px;
+            width: 200px;
+            background-color: violet;
+            color: aliceblue;
+            font-size: 30px;
+            text-align: center;
+            border-bottom: 3px solid red;
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="ul-ul">
+        <li class="ul-li">1</li>
+        <li class="ul-li">2</li>
+        <li class="ul-li">3</li>
+    </ul>
+    <script>
+        var ul = document.querySelector('.ul-ul');
+        var lis = document.querySelectorAll('.ul-li');
+        var li = document.createElement('li');
+        for (var i = 0; i < 5; i++) {
+            li = document.createElement('li');
+            li.className = "ul-li";
+            li.innerHTML = 4 + i;
+            ul.appendChild(li);
+        }
+        ul.addEventListener("click", function(e) {
+            var ev = e || event;
+            if (ev.target.className == 'ul-li') {
+                alert("我是li " + ev.target.innerHTML);
+            }
+            // alert("点击成功");
+        }, false)
+    </script>
+</body>
+
+</html>

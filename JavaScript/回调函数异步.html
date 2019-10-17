@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    // 创建函数createEle将data中的数据渲染到页面中，使用li标签
+    var arr = [{
+            name: "san1",
+            age: 12
+        }, {
+            name: "san2",
+            age: 18
+        }, ]
+        // add();
+
+    function add() {
+        //在疫苗以后将data数据渲染到页面中
+        setTimeout(() => {
+            arr.forEach(v => {
+                let li = document.createElement("li");
+                li.innerHTML = v.name;
+                document.body.appendChild(li);
+            })
+        }, 1000);
+        console.log("我是添加前")
+        console.log(arr);
+    }
+    console.time(); //开始计时器
+    rem({
+        name: "san3",
+        age: 19
+    }, add);
+    console.timeEnd(); //结束计时器
+    // 创建addEle函数，在2s后往data内添加一个新数据
+    //在页面中写入li必须在data数据更新之后（data数据更新是异步操作），等异步结束后再进行渲染，解决方法使用回调函数讲一个函数作为另一个函数的参数，并且在另一个函数内调用，回调函数可以在另一个函数内部功能实现完成以后再进行调用
+    function rem(obj, aww) {
+        if (obj instanceof Object) { //判断类型
+            setTimeout(() => {
+                arr.push(obj);
+                aww();
+                console.log(arr);
+                console.log("我是添加后")
+            }, 2000);
+        }
+    }
+</script>

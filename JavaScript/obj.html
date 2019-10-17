@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象</title>
+</head>
+<body>
+    <script>
+        var obj={
+            name:"赵哥",
+            age:18,
+            say:function(){
+                document.write("赵哥好！");
+            }
+        }
+        // document.write(obj.name);
+        // obj.say();
+
+        var obj1=new Object();
+            obj1.name="san",
+            obj1.age=12,
+            obj1.say=function(){
+                document.write("你好");
+            }
+        // document.write(obj1.name);
+        // obj1.say();
+
+        function Person(){
+            this.name="zhao";
+            this.age=18;
+            this.sex="男";
+            this.say=function(){
+                document.write("你好！");
+            }
+        }
+        var per=new Person();
+        per.say();
+        document.write(per.name);
+    </script>
+</body>
+</html>

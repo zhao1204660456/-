@@ -1,0 +1,360 @@
+.tittle-location {
+    position: fixed;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    background-color: rgba(38, 174, 250, 0.8);
+}
+
+
+/* 标题栏开始 */
+
+.par-tittle {
+    padding: 0 0.24rem;
+    box-sizing: border-box;
+    height: 0.88rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #ffffff;
+}
+
+.par-tittle>p>i {
+    font-size: 0.44rem;
+    color: #ffffff;
+}
+
+
+/* 标题栏结束 */
+
+
+/* 商品详情图开始 */
+
+.commodity-map {
+    width: 100%;
+    height: 6.4rem;
+    background: url(../img/com-map.jpg) no-repeat center center;
+}
+
+
+/* 商品详情图结束 */
+
+
+/* tab栏开始 */
+
+.par-tab {
+    padding: 0 0.24rem;
+    box-sizing: border-box;
+    height: 0.68rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+.par-tab>p {
+    margin: 0 0.3rem;
+}
+
+.par-tab>.pitch {
+    border-bottom: 0.04rem solid #ffffff;
+}
+
+
+/* tab栏结束 */
+
+
+/* 商品介绍开始 */
+
+.commodity-particulars {
+    width: 100%;
+    padding: 0 0.24rem;
+    box-sizing: border-box;
+    font-size: 0.3rem;
+    color: #000000;
+    margin-bottom: 0.1rem;
+}
+
+.commodity-particulars>div {
+    padding-top: 0.12rem;
+    box-sizing: border-box;
+}
+
+.ommodity-particulars-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ommodity-particulars-left {
+    display: flex;
+    align-items: flex-end;
+}
+
+.commodity-particulars-volume {
+    font-size: 0.22rem;
+    color: #b2b2b2;
+}
+
+.particulars-left-fu {
+    font-size: 0.18rem;
+    color: #fc4444;
+}
+
+.particulars-left-price {
+    font-size: 0.28rem;
+    color: #fc4444;
+    margin-right: 0.12rem;
+}
+
+.particulars-left-fu-delete {
+    font-size: 0.18rem;
+    color: #b2b2b2;
+}
+
+.particulars-left-price-delete {
+    font-size: 0.22rem;
+    color: #b2b2b2;
+    margin-right: 0.32rem;
+}
+
+.particulars-left-frame {
+    border: 0.01rem solid #fc4444;
+    color: #fc4444;
+    font-size: 0.22rem;
+    border-radius: 0.4rem;
+    padding: 0 0.04rem;
+}
+
+.ommodity-particulars-div i {
+    color: #26aefa;
+}
+
+
+/* 商品介绍结束 */
+
+
+/* 用户评价开始 */
+
+.commodity-evaluation {
+    padding: 0.1rem 0.24rem;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.evaluation-tittle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.1rem;
+}
+
+.evaluation-tittle-left {
+    display: flex;
+    align-items: flex-end;
+}
+
+.evaluation-tittle-left>.evaluation {
+    font-size: 0.3rem;
+    color: #000000;
+}
+
+.evaluation-tittle-left>.rate,
+.rate-count {
+    font-size: 0.22rem;
+    color: #b2b2b2;
+    margin-right: 0.1rem;
+}
+
+.evaluation-commodity {
+    width: 100%;
+    display: flex;
+    font-size: 0.22rem;
+    color: #ffffff;
+}
+
+.evaluation-commodity>div {
+    background-color: #95d5fa;
+    margin-right: 0.24rem;
+    border-radius: 0.06rem;
+    padding: 0 0.06rem;
+}
+
+.evaluation-commodity>.evaluation-commodity-checked {
+    background-color: #26aefa;
+}
+
+.evaluation-user {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0.24rem;
+}
+
+.user-img {
+    width: 1.08rem;
+    height: 1.08rem;
+}
+
+.user-evaluate {
+    width: 5.7rem;
+}
+
+.user-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #919191;
+    font-size: 0.24rem;
+}
+
+.user-time {
+    color: #b2b2b2;
+    font-size: 0.18rem;
+}
+
+.user-icon i {
+    font-size: 0.18rem;
+    color: #fc4444;
+    margin-right: -0.06rem;
+}
+
+.user-commodity-img {
+    padding-top: 0.1rem;
+}
+
+.user-evaluate-font {
+    font-size: 0.18rem;
+    color: #919191;
+    padding-top: 0.1rem;
+}
+
+.evaluation-tittle-right {
+    display: flex;
+    align-items: center;
+}
+
+.evaluation-tittle-right>i {
+    font-size: 0.2rem;
+    color: #919191;
+}
+
+
+/* 用户评价结束 */
+
+
+/* 商品详情开始 */
+
+.details {
+    width: 100%;
+    padding: 0 0.24rem;
+    box-sizing: border-box;
+}
+
+.details-tittle {
+    padding: 0.24rem 0;
+}
+
+
+/* 商品详情结束 */
+
+
+/* 相关推荐开始 */
+
+.recommend {
+    width: 100%;
+    padding: 0.12rem 0.24rem;
+    box-sizing: border-box;
+}
+
+.recommend-ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.recommend-li {
+    width: 3.39rem;
+}
+
+.recommend-img {
+    width: 100%;
+}
+
+.recommend-img>img {
+    width: 100%;
+}
+
+.recommend-right-tittle {
+    padding-top: 0.04rem;
+    font-size: 0.3rem;
+    color: #666666;
+}
+
+.recommend-right-prive {
+    padding-top: 0.04rem;
+    padding-bottom: 0.1rem;
+    font-size: 0.32rem;
+    color: #fc4444;
+}
+
+
+/* 相关推荐结束 */
+
+
+/* 标签栏开始 */
+
+.tab {
+    width: 100%;
+    height: 0.98rem;
+    padding: 0.14rem 0.24rem 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    border-top: 0.01rem solid rgba(0, 0, 0, 0.18);
+}
+
+.tab-left {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tab-left-ul {
+    width: 3rem;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tab-left-li {
+    width: 1rem;
+    height: 100%;
+    text-align: center;
+}
+
+.tab-left-li>i {
+    font-size: 0.44rem;
+    color: #666666;
+}
+
+.tab-left-li>p {
+    font-size: 0.2rem;
+    color: #666666;
+}
+
+.tab-btn {
+    width: 2.4rem;
+    height: 0.7rem;
+    background-color: #26aefa;
+    color: #ffffff;
+    border-radius: 0.1rem;
+    line-height: 0.7rem;
+    text-align: center;
+}
+
+
+/* 标签栏结束 */

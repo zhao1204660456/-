@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .banner {
+            width: 1200px;
+            height: 460px;
+            background-color: violet;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="banner-img">
+            <ul class="banner-ul">
+                <li class="banner-li">
+                    <img src="" alt="">
+                </li>
+                <li class="banner-li">
+                    <img src="" alt="">
+                </li>
+                <li class="banner-li">
+                    <img src="" alt="">
+                </li>
+                <li class="banner-li">
+                    <img src="" alt="">
+                </li>
+                <li class="banner-li">
+                    <img src="" alt="">
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
+<script>
+    //1.获取需要操作的元素（大盒子，图片的大盒子，所有的图片）
+    //2.通过节点的方法将图片的第一张图片进行克隆放到他们最后面，用来模拟实现第一张图片，实现无缝轮播
+    //3.声明变量index用来表示当前正在显示的图片的下标
+    //4.声明变量movetime用来保存自动轮播的时间函数
+    // 5.申明变量animateTimer保存动画的时间函数
+    // 6.对moveTimer进行赋值，使用时间函数每过一定的时间执行一次运动的函数（需要定义运动的函数move）
+    // 7.定义函数move，在move中将index自增，判断index的数值来确定大盒子的定位属性；调用动画函数（animate），可以将图片的轮播进行动画（实现左右的平移）
+</script>

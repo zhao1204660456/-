@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var arr = [{
+        name: "san1",
+        age: 12
+    }, {
+        name: "san2",
+        age: 18
+    }, ]
+
+    function add() {
+        setTimeout(() => {
+            arr.forEach(v => {
+                let li = document.createElement("li");
+                li.innerHTML = v.name;
+                document.body.appendChild(li);
+                console.log(li);
+            })
+        }, 1000);
+    }
+    asss();
+    async function asss() {
+        await arr.push({
+            name: "san3",
+            age: 20
+        });
+        add();
+    }
+
+    function* aaaa() {
+        yield "111";
+        yield "222";
+        yield "333";
+        yield "444";
+        return "wwww";
+    }
+    let res = aaaa();
+    console.log(res.next());
+    console.log(res.next());
+    console.log(res.next());
+    console.log(res.next());
+    console.log(res.next());
+</script>
+
+</html>

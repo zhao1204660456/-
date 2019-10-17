@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            perspective: 1000px;
+            /*设置景深*/
+            transform-style: preserve-3d;
+        }
+        
+        #cube {
+            position: relative;
+            top: 40%;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #333;
+            margin: 0px auto;
+            transform-style: preserve-3d;
+            transform-origin: 50% 50% -101px;
+            transform: rotateY(0deg);
+        }
+        /* #cube:hover {
+            transform: rotateY(360deg);
+            transition: 5s;
+        }
+        
+        #cube div {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+        }
+        
+        #cube div:nth-child(1) {
+            position: absolute;
+            top: 0px;
+        }
+        
+        #cube div:nth-child(2) {
+            position: absolute;
+            top: -202px;
+            transform-origin: 50% 100%;
+            transform: rotateX(90deg);
+        }
+        
+        #cube div:nth-child(3) {
+            position: absolute;
+            top: 202px;
+            transform-origin: 50% 0;
+            transform: rotateX(-90deg);
+        }
+        
+        #cube div:nth-child(4) {
+            position: absolute;
+            left: -202px;
+            transform-origin: 100% 50%;
+            transform: rotateY(-90deg);
+        }
+        
+        #cube div:nth-child(5) {
+            position: absolute;
+            left: 202px;
+            transform-origin: 0 50%;
+            transform: rotateY(90deg);
+        }
+        
+        #cube div:nth-child(6) {
+            position: absolute;
+            top: 0px;
+            transform: translateZ(-202px);
+        } */
+    </style>
+</head>
+
+<body>
+    <div id="cube">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+body,
+ul,
+li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+
+/* banner图开始 */
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 460px;
+    margin: 0 auto;
+    margin-bottom: 16px;
+}
+
+.banner>.banner-ul {
+    width: 100%;
+    height: 100%;
+}
+
+.banner-ul>.banner-li {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s;
+    cursor: pointer;
+    background-size: cover;
+}
+
+.banner-qq {
+    position: relative;
+    margin: 0 auto;
+    width: 1200px;
+    height: 100%;
+}
+
+.banner-img1 {
+    width: 100%;
+    height: 100%;
+    background: url(../img/banner001.jpg) no-repeat center center;
+}
+
+.banner-img2 {
+    width: 100%;
+    height: 100%;
+    background: url(../img/banner02.png) no-repeat center center;
+}
+
+.banner-img3 {
+    width: 100%;
+    height: 100%;
+    background: url(../img/banner003.jpg) no-repeat center center;
+}
+
+.banner-img4 {
+    width: 100%;
+    height: 100%;
+    background: url(../img/banner02.png) no-repeat center center;
+}
+
+.banner-img5 {
+    width: 100%;
+    height: 100%;
+    background: url(../img/banner003.jpg) no-repeat center center;
+}
+
+.banner-f1 {
+    position: absolute;
+    top: 190px;
+    left: 40px;
+    font-size: 28px;
+    color: #ffffff;
+    float: left;
+}
+
+.banner-f2 {
+    position: absolute;
+    top: 188px;
+    left: 270px;
+    font-size: 32px;
+    color: #ffffff;
+    float: left;
+}
+
+.banner-f3 {
+    float: left;
+    font-size: 24px;
+    color: #ffffff;
+    position: absolute;
+    top: 240px;
+    left: 40px;
+}
+
+.banner-li img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* banner图结束 */
+
+
+/* banner箭头开始 */
+
+.btn {
+    position: absolute;
+    top: 195.5px;
+    width: 41px;
+    height: 69px;
+    background-color: white;
+    z-index: 10;
+}
+
+.btn.btn-left {
+    left: 0;
+    background: url(../img/slides.png) no-repeat -84px, 0;
+}
+
+.btn.btn-right {
+    right: 0;
+    background: url(../img/slides.png) no-repeat -125px, 50%;
+}
+
+.btn.btn-left:hover {
+    background: url(../img/slides.png) no-repeat 0, 0;
+}
+
+.btn.btn-right:hover {
+    background: url(../img/slides.png) no-repeat -41px, 0;
+}
+
+
+/* banner箭头结束 */
+
+
+/* banner点开始 */
+
+.banner-dot {
+    position: absolute;
+    bottom: 20px;
+    left: calc(50% - 50px);
+    width: 100px;
+    height: 10px;
+    z-index: 8;
+}
+
+.banner-dot>.dot {
+    float: left;
+    width: 6px;
+    height: 6px;
+    margin: 0 5px;
+    border: 2px solid hsla(0, 0%, 100%, .3);
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+.dot:hover {
+    background-color: hsla(0, 0%, 100%, .3);
+    border: 2px solid rgba(0, 0, 0, .4);
+}
+
+.banner-dot>.active {
+    background-color: hsla(0, 0%, 100%, .3);
+    border: 2px solid rgba(0, 0, 0, .4);
+}

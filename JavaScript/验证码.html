@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>验证码</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            float: left;
+        }
+        
+        canvas {
+            width: 200px;
+            height: 60px;
+            background-color: violet;
+        }
+        
+        #submit {
+            width: 50px;
+            height: 30px;
+        }
+        
+        .text {
+            width: 200px;
+            height: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" class="text">
+    <canvas class="canvas">
+    </canvas>
+    <input type="submit" class="submit">
+</body>
+
+</html>
+<script>
+    let text = document.querySelector('.text');
+    let submit = document.querySelector('.submit');
+    let showNum = [];
+    let canvas = document.querySelector('.canvas');
+    show(showNum);
+    canvas.onclick = function() {
+            show(showNum);
+        }
+        //提交按钮
+    useSubmit();
+
+    function useSubmit() {
+        submit.onclick = () => {
+            let code = showNum.join("").toUpperCase();
+            let useText = text.value.toUpperCase();
+            if (useText == code) {
+                alert("提交成功");
+            } else {
+                show(showNum);
+            }
+        }
+    }
+    //产生验证码
+    function show(showNum) {
+        let context = canvas.getContext("2d");
+        let boxWidex = canvas.clientWidth;
+        let boxHeight = canvas.clientHeight;
+        canvas.width = boxWidex;
+        canvas.height = boxHeight;
+        let randomNum1 = "a,b,c,d,e,f,g,h,i,g,k,l,m,n,o,p,q,x,y,z,u,v,w,r,s,t,A,B,C,D,E,F,G,H,I,G,K,L,M,N,O,P,Q,X,Y,Z,U,V,W,R,S,T,0,1,2,3,4,5,6,7,8,9";
+        var randomNum = randomNum1.split(",");
+        let count = randomNum.length; //随机数的个数
+        for (let i = 0; i < 4; i++) {
+            let index = parseInt(Math.floor(Math.random() * count));
+            let number = randomNum[index];
+            showNum[i] = number;
+            var deg = Math.random() * 30 * Math.PI / 180; //弧度
+            let x = 10 + 50 * i;
+            let y = 30 + parseInt(Math.floor(Math.random() * 20));
+            context.font = "bold 38px 微软雅黑";
+            context.strokeStyle = randomColor();
+            context.translate(x, y);
+            context.rotate(deg);
+            context.fillText(number, 0, 0);
+            context.rotate(-deg);
+            context.translate(-x, -y);
+
+        }
+        for (let i = 0; i < 5; i++) {
+            context.strokeStyle = randomColor();
+            let x = parseInt(Math.floor(Math.random() * boxWidex));
+            let y = parseInt(Math.floor(Math.random() * boxHeight));
+            let x1 = parseInt(Math.floor(Math.random() * boxWidex));
+            let y1 = parseInt(Math.floor(Math.random() * boxHeight));
+            context.beginPath();
+            context.moveTo(x, y);
+            context.lineTo(x1, y1);
+            context.stroke();
+        }
+        for (let i = 0; i < 30; i++) {
+            context.strokeStyle = randomColor();
+            let x = parseInt(Math.floor(Math.random() * boxWidex));
+            let y = parseInt(Math.floor(Math.random() * boxHeight));
+            context.beginPath();
+            context.moveTo(x, y);
+            context.lineTo(x + 2, y + 2);
+            context.stroke();
+        }
+    }
+
+    function randomColor() {
+        let r = parseInt(Math.floor(Math.random() * 256));
+        let g = parseInt(Math.floor(Math.random() * 256));
+        let b = parseInt(Math.floor(Math.random() * 256));
+        return "rgb(" + r + "," + g + "," + b + ")";
+    }
+</script>

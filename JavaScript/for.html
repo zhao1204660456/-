@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>for练习</title>
+</head>
+<body>
+    <!-- 购物 -->
+    <!-- <script>
+        var a=15,b=2,c=5;//a洗发水 b香皂 c牙刷
+        
+        //var price=prompt("请输入钱：");
+        function shop(price){
+            var i,j,k,z=0;
+            for(i=0;i<=6;i++)
+                for(j=0;j<=50;j++)
+                    for(k=0;k<=20;k++){
+                        if(a*i+b*j+c*k==price){
+                            document.write("15元洗发水"+i+"个，2元香皂"+j+"个，5元牙刷"+k+"个！<br>");
+                            z++;
+                        }
+                    }
+            document.write("共有"+z+"种情况");
+        }
+        shop(100);
+    </script> -->
+
+    <!-- 马驼粮问题 -->
+    <!-- <script>
+        function horse(horses,price){
+            var i,j,k,z=0;
+            for(i=0;i<=Math.floor(price/2) ;i++)
+                for(j=0;j<=horses;j++)
+                    for(k=0;k<=horses;k++){
+                        if(i+j+k==horses&&2*i+j*1+k*0.5==price){
+                            document.write("大马:"+i+"匹，中马:"+j+"匹，小马:"+k+"匹"+"<br>");
+                            z++;
+                        }
+                    }
+            document.write("共有"+z+"种情况");
+        }
+        horse(100,100);
+    </script> -->
+
+    <!-- 直角三角形问题 -->
+    <!-- <script>
+        function triangle(a){
+            var i,j;
+            for(i=1;i<a;i++){
+                for(j=1;j<=i;j++){
+                    document.write("*");
+                }
+                document.write("<br>");
+            }
+        }
+        triangle(5);
+    </script> -->
+
+    <!-- 某侦察队接到一项紧急任务，要求在A、B、C、D、E、F六个队员中尽可能多地挑若干人，但有以 下限制条件:
+    A和B两人中至少去一人;
+    A和D不能一起去;
+    A、E和F三人中要派两人去;
+    B和C都去或都不去 ;
+    C和D两人中去-一个;
+    若D不去， 则E也不去。
+    间应当让哪几个人去
+    -->
+    <!-- <script>
+        var a,b,c,d,e,f;
+        document.write("a b c d e f<br>")
+        for(a=0;a<2;a++){
+            for(b=0;b<2;b++){
+                for(c=0;c<2;c++){
+                    for(d=0;d<2;d++){
+                        for(e=0;e<2;e++){
+                            for(f=0;f<2;f++){
+                                if(((a+b>=1))&&(a+d<=1)&&(b==c)&&(c!=d)&&(d+e==0||d==1)&&(a+e+f==2)){
+                                    document.write(a+" "+b+" "+" "+c+" "+d+" "+e+" "+f+"<br>");
+                                    document.write("去执行任务的有：")
+                                    if(a==1) document.write("a"+" ");
+                                    if(b==1) document.write("b"+" ");
+                                    if(c==1) document.write("c"+" ");
+                                    if(d==1) document.write("d"+" ");
+                                    if(e==1) document.write("e"+" ");
+                                    if(f==1) document.write("f"+" ");
+                                    document.write("<br>");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }  
+    </script> -->
+
+    <!-- 水仙花数 -->
+    <!-- <script>
+    var i,a,b,c,z=0;
+    for(i=100;i<=999;i++){
+        a=Math.trunc(i/100);
+        b=Math.trunc(i%100/10);
+        c=i%10;
+        if(a**3+b**3+c**3==i){
+            z++;
+            document.write("第"+z+"个水仙数为："+i+"="+a**3+" "+b**3+" "+ c**3+"<br>");
+        }
+    }
+    </script> -->
+
+    <!-- 九九乘法表 -->
+    <!-- <script>
+        var i,j;
+        for(i=1;i<=9;i++){
+            for(j=1;j<=i;j++){
+                document.write(i+"*"+j+"="+i*j+"&nbsp;\t");
+            }
+            document.write("<br>");
+        }
+    </script> -->
+
+    <!-- 幼兔问题 -->
+    <!-- <script>
+        function rabbit(num){
+            var i,a=1,b=0,c=0,sum=0;
+            for(i=1;i<=num;i++){
+                if(i==1){
+                    sum=a+b+c;
+                    document.write("幼兔有"+a+"对，小兔有"+b+"对，成兔有"+c+"对，共有"+sum+"对<br>");
+                }else {
+                    c+=b;
+                    b=a;
+                    a=c;
+                    sum=a+b+c;
+                    document.write("幼兔有"+a+"对，小兔有"+b+"对，成兔有"+c+"对，共有"+sum+"对<br>");
+                }
+            }
+        }
+        rabbit(10);
+     </script>    -->
+    <!-- //    幼兔  小兔   成兔      共
+    // 1    1                    1
+    // 2         1               1
+    // 3    1          1         2
+    // 4    1    1     1         3
+    // 5    2    1     2         5
+    // 6    3    2     3         8
+    // 7    5    3     5         13 -->
+    
+
+    <!-- <script>
+    var a,b,c,z=0;
+    for(i=0;i<=20;i++){
+        for(j=0;j<=10;j++){
+            for(k=0;k<=4;k++){
+                if(i*1+j*2+k*5==20){
+                    document.write("1元有"+i+"张，2元有"+j+"张，5元有"+k+"张"+"<br>");
+                    z++;
+                }
+            }
+        }
+    }
+    document.write("共有"+z+"种情况");
+    </script> -->
+
+    <script>
+        function price(number,prices){
+            var i,j,k,n=0;
+            for(i=0;i<=20;i++){
+                for(j=0;j<=100;j++){
+                    for(k=0;k<34;k++){
+                        if(i+j+3*k==number&&5*i+1*j+k*1==prices){
+                            document.write("公鸡有"+i+"只，母鸡有"+j+"只，小鸡有"+3*k+"只"+"<br>");
+                            n++;
+                        }
+                    }
+                }
+            }
+            document.write("共有"+n+"种可能");
+        }
+        price(100,100);
+    </script>
+    
+
+</body>
+</html>

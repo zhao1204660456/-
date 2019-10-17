@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+</body>
+<script>
+    // 特点:隐式循环、链式调用
+    // 在jQuery的学习中必须搞清楚jQuery对象和原生对象的区别。只有jQuery对象才能使用jQuery对象的方法，这是jQuery实现链式调用的基本原理。
+    // 隐式循环:当我们使用jQuery语法将DOM元素获取到以后添加css样式等操作我们不需要遍历就可以实现这些操作，是因为jQuery隐式的帮助我们进行了循环遍历
+    // jQuery在操作dom元素的时候其实是将通过js选择器获取到的所有DOM元素通过遍历刚在了jQuery会子安自身身上，这样在jQuery内部使用的时候就不会出现问题
+    //jQuery其实就是一个构造函数，通过这个构造函数可以将内部所有的属性方法给外部使用，这个构造函数只需要接收一个参数，这个参数表示的页面中的dom元素（css选择器)
+
+    function jQuery(select) {
+        let arr = document.querySelectorAll(select);
+        for (let i = 0; i < arr.length; i++) {
+            this[i] = arr[i];
+        }
+        this.length = arr.length;
+    }
+    //因为jQuery对象中有很多方法，讲这些方法都放在原型中，用过this关键字进行立联系
+    jQuery.prototype = {
+        css: function(name, value) {
+            //设置css样式有两种情况
+            //1.将样式与样式值分开去写
+            //2.将所有需要添加或修改的样式都放在一个对象中传递给jQuery，参数只有一个
+            //根据argument对象俩判断实参的个数
+            if (arguments.length === 2) {
+                //通过循环将jQuery中每一各元素都设置样式
+                for (let i = 0; i < this.length; i++) {
+                    this[i].style[name] = value;
+                }
+            } else if (arguments.length === 1) {
+                //如果只确定一个参数，并且这个参数为一个对象，就可以确定css样式
+                if (name instanceof Object) {
+                    for (let i = 0; i < this.length; i++) {
+
+                        //将对象中的样式以及样式值遍历出来进行设置
+                        for (let j in name) {
+                            this[i].style[j] = name[j];
+                            console.dir(this[i])
+                            console.dir(this[i].style[j])
+                            console.dir(this[i].style.cssText)
+                        }
+                    }
+                }
+            }
+            return this;
+        },
+        html: function(obj) {
+            for (let i = 0; i < this.length; i++) {
+                this[i].innerHTML = obj;
+            }
+            return this;
+        }
+    }
+    let $ = new jQuery(".box");
+    $.css({
+        height: "200px",
+        width: "200px",
+        backgroundColor: "red",
+        margin: "20px",
+        fontSize: "40px"
+    }).html("你好");
+    console.log($);
+    // console.log(new $("div"));
+</script>
+
+</html>

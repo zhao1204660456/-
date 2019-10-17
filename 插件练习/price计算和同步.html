@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: violet;
+            margin: 20px;
+            float: left;
+        }
+        
+        .bigBox {
+            clear: both;
+        }
+        
+        .select-zong {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: blueviolet;
+        }
+        
+        .select {
+            margin-top: 180px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            float: left;
+            background-color: blueviolet;
+        }
+        
+        .box-dot {
+            margin-top: 100px;
+            width: 100px;
+            height: 40px;
+            float: left;
+        }
+        
+        .dot-add,
+        .dot-reduce {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: tomato;
+            float: left;
+        }
+        
+        .num {
+            width: 20px;
+            height: 40px;
+            line-height: 40px;
+            float: left;
+            text-align: center;
+        }
+        
+        .price {
+            clear: both;
+            color: black;
+            font-size: 30px;
+        }
+        
+        .some {
+            font-size: 26px;
+            color: red;
+        }
+        
+        .priceZong {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="select-zong" id="1"></div>
+    <div class="bigBox">
+        <div class="select" id="1"></div>
+        <div class="box"></div>
+
+        <div class="box-dot">
+            <div class="zongjia">12</div>
+            <div class="priceZong">
+                12
+            </div>
+            <div class="dot-reduce"></div>
+            <div class="num">1</div>
+            <div class="dot-add"></div>
+        </div>
+    </div>
+    <div class="bigBox">
+        <div class="select" id="1"></div>
+        <div class="box"></div>
+
+        <div class="box-dot">
+            <div class="zongjia">14</div>
+            <div class="priceZong">
+                14
+            </div>
+            <div class="dot-reduce"></div>
+            <div class="num">1</div>
+            <div class="dot-add"></div>
+        </div>
+    </div>
+
+    <div class="price">0</div>
+    <div class="some" style="margin-top: 0%">0</div>
+</body>
+<script>
+    // let width1 = 100;
+    // document.write('<div style="width:' + width1 + 'px;"></div>');
+    // document.write('<div style="width:' + width1 + 'px;height:' + width1 + 'px;background:red;"></div>');
+    // console.log('<div style="width:' + width1 + 'px;height:' + width1 + 'px;background:red;"></div>');
+    let num = document.querySelectorAll('.num');
+    let add = document.querySelectorAll('.dot-add');
+    let reduce = document.querySelectorAll('.dot-reduce');
+    let price = document.querySelector('.price');
+    let select = document.querySelectorAll('.select');
+    let zong = document.querySelector('.select-zong');
+    let zongjia = document.querySelectorAll('.zongjia');
+    let priceZong = document.querySelectorAll('.priceZong')
+    let index = [];
+    for (let i = 0; i < add.length; i++) {
+        index[i] = 1;
+    }
+    //点击全选按钮，全选或全取消
+    zong.onclick = () => {
+            if (zong.id == 1) {
+                console.log(zong.id)
+                zong.style.backgroundColor = "red"
+                for (let i = 0; i < add.length; i++) {
+                    select[i].id = 0;
+                    select[i].style.backgroundColor = "red"
+                }
+                zong.id = 0;
+            } else {
+                console.log(zong.id)
+                zong.style.backgroundColor = "blueviolet"
+                for (let i = 0; i < add.length; i++) {
+                    select[i].id = 1;
+                    select[i].style.backgroundColor = "blueviolet"
+                }
+                zong.id = 1;
+            }
+            addPrice();
+        }
+        //点击选择商品
+    for (let i = 0; i < add.length; i++) {
+        select[i].onclick = () => {
+                if (select[i].id == 1) {
+                    select[i].style.backgroundColor = "red"
+                    select[i].id = 0;
+                    console.log("red");
+                    console.log(select[i].id)
+                } else {
+                    select[i].style.backgroundColor = "blueviolet"
+                    select[i].id = 1;
+                    console.log("blueviolet");
+                    console.log(select[i].id)
+                }
+                let cc = 0;
+                for (let k = 0; k < add.length; k++) {
+
+                    if (select[k].id == 0) {
+                        cc++;
+
+                    }
+                    if (cc == add.length) {
+                        select[k].id = 0;
+                        zong.style.backgroundColor = "red"
+                    } else {
+                        zong.id = 1;
+                        zong.style.backgroundColor = "blueviolet"
+                    }
+                }
+                addPrice()
+            }
+            //添加商品数量
+        add[i].addEventListener("click", function() {
+            index[i]++;
+            console.log(priceZong)
+            zongjia[i].innerHTML = index[i] * priceZong[i].innerHTML;
+            num[i].innerHTML = index[i];
+        }, true);
+        //减少商品数量
+        reduce[i].addEventListener("click", function() {
+            index[i]--;
+            if (index[i] < 0) {
+                index[i] = 0;
+            }
+            num[i].innerHTML = index[i];
+            zongjia[i].innerHTML = index[i] * priceZong[i].innerHTML;
+        }, true);
+    }
+
+    //合计
+    function addPrice() {
+        let pricess = 0;
+        for (let p = 0; p < add.length; p++) {
+            if (select[p].id == 0) {
+                pricess += Number(zongjia[p].innerHTML);
+            }
+        }
+        price.innerHTML = pricess;
+    }
+</script>
+
+</html>

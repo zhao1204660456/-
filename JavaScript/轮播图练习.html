@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>轮播图练习</title>
+    <style>
+        body,
+        ul,
+        li {
+            padding: 0;
+            margin: 0;
+            border: none;
+            list-style: none;
+        }
+        
+        body {
+            background-color: rgb(248, 248, 248);
+        }
+        
+        .banner {
+            position: relative;
+            margin: 0 auto;
+            width: 1200px;
+            height: 480px;
+        }
+        
+        .bannerUl {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: violet;
+        }
+        
+        .bannerLi {
+            width: 100%;
+            height: 100%;
+            float: left;
+            display: none;
+        }
+        
+        .bannerDotBox {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 75px;
+            height: 10px;
+            display: inline-block;
+            margin: 0 auto;
+        }
+        
+        .bannerDot {
+            width: 10px;
+            height: 10px;
+            float: left;
+            border-radius: 50%;
+            margin-right: 5px;
+            background-color: tomato;
+        }
+        
+        .bannerLi1 {
+            background-color: red;
+        }
+        
+        .bannerLi2 {
+            background-color: blue;
+        }
+        
+        .bannerLi3 {
+            background-color: rgb(24, 252, 126);
+        }
+        
+        .bannerLi4 {
+            background-color: rgb(253, 30, 97);
+        }
+        
+        .bannerLi5 {
+            background-color: rgb(143, 250, 43);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <ul class="bannerUl">
+            <li class="bannerLi bannerLi1">
+            </li>
+            <li class="bannerLi bannerLi2">
+            </li>
+            <li class="bannerLi bannerLi3">
+            </li>
+            <li class="bannerLi bannerLi4">
+            </li>
+            <li class="bannerLi bannerLi5">
+            </li>
+        </ul>
+        <ul class="bannerDotBox">
+            <li class="bannerDot"></li>
+            <li class="bannerDot"></li>
+            <li class="bannerDot"></li>
+            <li class="bannerDot"></li>
+            <li class="bannerDot"></li>
+        </ul>
+    </div>
+</body>
+
+</html>
+<script>
+    var banners = document.querySelectorAll('.bannerLi');
+    var dots = document.querySelectorAll('.bannerDot');
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].onmouseover = function() {
+            banners[i].style.display = "block";
+            dots[i].style.backgroundColor = "#fff";
+            clearInterval(timer);
+        }
+        banners[i].onmouseover = function() {
+            clearInterval(timer);
+        }
+        dots[i].onmouseout = function() {
+            banners[i].style.display = "none";
+            dots[i].style.backgroundColor = "tomato";
+        }
+    }
+    var j = 0;
+    var timer = setInterval(function() {
+        if (j == banners.length) {
+            j = 0;
+        }
+        for (let i = 0; i < banners.length; i++) {
+            banners[i].style.display = "none";
+            dots[j].style.backgroundColor = "tomato";
+            if (i == j) {
+                banners[j].style.display = "block";
+                dots[j].style.backgroundColor = "#fff";
+            }
+        }
+        j++;
+    }, 2000)
+
+    // var timer=setInterval(function(){
+    //     for(let i=0;i<banners.length;i++){
+
+    //     }
+
+    // },1000)
+</script>

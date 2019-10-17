@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    时间已经过去<span>0</span>秒了
+</body>
+
+</html>
+<script>
+    var span = document.querySelector('span');
+    var sum = 0;
+    setInterval(function() {
+        sum++;
+        span.innerHTML = sum;
+    }, 1000)
+</script>

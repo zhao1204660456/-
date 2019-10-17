@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件监听</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: violet;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        点击
+    </div>
+    <script>
+        var box = document.querySelector('.box');
+
+        function yi() {
+            console.log("不是！");
+        }
+        // box.addEventListener("click", function() {
+        //     console.log("你好！");
+        // }, true);
+        // box.addEventListener("click", yi, true);
+        // box.removeEventListener("click", yi, false);
+        box.onclick = function(e) {
+            var ev = e || event;
+            console.log(ev);
+        };
+    </script>
+</body>
+
+</html>

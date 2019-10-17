@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let se = new XMLHttpRequest();
+        let str = "";
+        se.open("get", "https://www.easy-mock.com/mock/5cb813c897b3057000200322/td/goods", true)
+        se.send(null);
+        se.onreadystatechange = () => {
+            if (se.status === 200 && se.readyState == 4) {
+                let data = JSON.parse(se.response).data.data;
+
+                str = ``;
+
+            }
+        }
+    </script>
+</body>
+
+</html>

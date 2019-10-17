@@ -1,0 +1,23 @@
+body {
+    padding: 0;
+}
+
+.box {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 200px;
+    background-color: violet;
+    line-height: 200px;
+    text-align: center;
+    font-size: 40px;
+    color: aliceblue;
+    user-select: none;
+}
+
+.box:nth-child(2) {
+    position: absolute;
+    left: 400px;
+    top: 400px;
+}

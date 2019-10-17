@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>递归函数</title>
+</head>
+
+<body>
+    <script>
+        var c = 5;
+
+        function sum(c) {
+            if (c == 1) {
+                return c;
+            } else {
+                return c * sum(c - 1);
+            }
+        }
+        console.log(sum(c));
+    </script>
+</body>
+
+</html>

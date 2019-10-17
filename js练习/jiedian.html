@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        你好<span>!</span>
+    </div>
+</body>
+<script>
+    var box = document.querySelector('.box');
+    boxx(box);
+
+    function boxx(boxq) {
+        var boxs = boxq.lastElementChild;
+        console.log(boxs);
+    }
+
+    var aqq = document.createElement("p");
+    aqq.innerText = "asas";
+    var span = document.querySelector('span');
+    span.appendChild(aqq);
+    // console.log(span);
+</script>
+
+</html>

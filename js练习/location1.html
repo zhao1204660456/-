@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>登陆成功</div>
+    <p><span class="span">5</span>秒后跳转</p>
+    <div><a href="location对象练习.html"> 立即返回</a></div>
+</body>
+<script>
+    var box = document.querySelector('.span');
+    console.log(box);
+    var index = 5;
+    setInterval(() => {
+        index--;
+        box.innerHTML = index;
+        if (index === 0) {
+            location.replace("location对象练习.html");
+        }
+    }, 1000)
+</script>
+
+</html>

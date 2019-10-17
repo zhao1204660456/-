@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选项卡</title>
+    <style>
+        body,
+        ul,
+        li {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            user-select: none;
+        }
+        
+        .label {
+            width: 1200px;
+            height: 480px;
+            margin: 0 auto;
+        }
+        
+        ul.list {
+            position: relative;
+            width: 240px;
+            height: 480px;
+            padding: 20px 0;
+            box-sizing: border-box;
+            background-color: violet;
+        }
+        
+        .list>.listLi {
+            width: 240px;
+            height: 44px;
+            padding-left: 20px;
+            box-sizing: border-box;
+        }
+        
+        .listLi>.listDiv {
+            position: absolute;
+            left: 240px;
+            top: 0;
+            width: 960px;
+            height: 480px;
+            font-size: 50px;
+            color: aliceblue;
+            background-color: tomato;
+            /* background: radial-gradient(red, rgb(242, 252, 101), rgb(133, 253, 86)); */
+            line-height: 480px;
+            text-align: center;
+            display: none;
+        }
+        
+        .tu1 {
+            background: url()
+        }
+    </style>
+</head>
+
+<body>
+    <div class="label">
+        <ul class="list">
+            <li class="listLi">
+                1
+                <viv class="listDiv tu1">1</viv>
+            </li>
+            <li class="listLi">
+                2
+                <viv class="listDiv">2</viv>
+            </li>
+            <li class="listLi">
+                3
+                <viv class="listDiv">3</viv>
+            </li>
+            <li class="listLi">
+                4
+                <viv class="listDiv">4</viv>
+            </li>
+            <li class="listLi">
+                5
+                <viv class="listDiv">5</viv>
+            </li>
+            <li class="listLi">
+                6
+                <viv class="listDiv">6</viv>
+            </li>
+            <li class="listLi">
+                7
+                <viv class="listDiv">7</viv>
+            </li>
+            <li class="listLi">
+                8
+                <viv class="listDiv">8</viv>
+            </li>
+            <li class="listLi">
+                9
+                <viv class="listDiv">9</viv>
+            </li>
+            <li class="listLi">
+                10
+                <viv class="listDiv">10</viv>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
+<script>
+    var lis = document.querySelectorAll(".listLi");
+    var divs = document.querySelectorAll(".listDiv");
+    // var i = 0;
+    for (let i = 0; i < lis.length; i++) {
+        lis[i].onmouseover = function() {
+            divs[i].style.display = "block";
+        }
+        lis[i].onmouseout = function() {
+            divs[i].style.display = "none";
+        }
+    }
+    // if (i == divs.length) {
+    //     i = 0;
+    // }
+</script>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>本地存储表单</title>
+    <link rel="stylesheet" href="../../项目/CarRepairPC/css/bootstrap.min.css">
+    <style>
+        .box {
+            width: 800px;
+            margin: 60px auto 0 auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <table class="table">
+            <thead>
+                <tr class="active">
+                    <td class="active">姓名</td>
+                    <td class="info">学号</td>
+                    <td class="success">性别</td>
+                    <td class="warning">年龄</td>
+                    <td class="danger">班级</td>
+                    <td class="danger">删除</td>
+                </tr>
+            </thead>
+            <tbody class="tb">
+
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-success">添加</button>
+    </div>
+</body>
+<script>
+    var student = [{
+        id: 1,
+        name: "赵哥",
+        card: "001",
+        sex: "男",
+        age: 18,
+        classes: "16计科",
+    }, {
+        id: 2,
+        name: "赵哥",
+        card: "002",
+        sex: "男",
+        age: 18,
+        classes: "16计科",
+    }, {
+        id: 3,
+        name: "赵哥",
+        card: "003",
+        sex: "男",
+        age: 18,
+        classes: "16计科",
+    }, {
+        id: 4,
+        name: "赵哥",
+        card: "004",
+        sex: "男",
+        age: 18,
+        classes: "16计科",
+    }, {
+        id: 5,
+        name: "赵哥",
+        card: "005",
+        sex: "男",
+        age: 18,
+        classes: "16计科",
+    }, ]
+    localStorage.setItem("student", JSON.stringify(student));
+    var tb = document.querySelector(".tb");
+    let data = "";
+    render();
+
+    function render() {
+        data = JSON.parse(localStorage.getItem("student"));
+        let str = "";
+        data.forEach(v => {
+            str += `
+            <tr class="active" id="${v.id}">
+                    <td class="active">${v.name}</td>
+                    <td class="info">${v.card}</td>
+                    <td class="success">${v.sex}</td>
+                    <td class="warning">${v.age}</td>
+                    <td class="danger">${v.classes}</td>
+                    <td class="danger"><button type="button" class="btn btn-danger">删除</button></td>
+                </tr>
+            `;
+        });
+        tb.innerHTML = str;
+        del();
+    }
+
+    function del() {
+        tb.addEventListener("click", (e) => {
+            let ev = e || event;
+            let target = ev.target;
+            if (target.tagName == "BUTTON") {
+                let id = target.parentElement.parentElement.id;
+                data.forEach((v, i) => {
+                    if (v.id == id) {
+                        // console.log(v.id);
+                        data.splice(i, 1);
+                        return;
+                    }
+                })
+            }
+            localStorage.setItem("student", JSON.stringify(data));
+            render();
+        }, false)
+    }
+    updata();
+
+    function updata() {
+        tb.addEventListener("click", (e) => {
+
+            let ev = e || event;
+            if (ev.target.tagName == "TD") {
+                let str = `<input type="text" class="form-control" placeholder="Text input" value="${ev.innerHTML}">`;
+                console.dir(ev.target)
+            }
+
+
+        }, false)
+    }
+</script>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2d转换</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        .box {
+            width: 400px;
+            height: 400px;
+            background-color: hotpink;
+            line-height: 400px;
+            text-align: center;
+            transform: translate(20px);
+        }
+        
+        .font {
+            font-size: 100px;
+            font-family: "仿宋";
+            transform: translate(20px) skew(30deg) scale(2) rotate(90deg);
+            /* 偏移量 斜切 放大缩小 旋转 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="font">赵哥</div>
+    </div>
+</body>
+
+</html>

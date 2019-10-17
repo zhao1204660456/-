@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件练习</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 50px;
+            background-color: yellow;
+            line-height: 50px;
+            text-align: center;
+            text-overflow: ellipsis;
+        }
+        
+        p {
+            /* 单行溢出隐藏 */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="box">
+        <p style="width: 100px; background-color: violet;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;"> 单行文本移出隐藏aafdsjakfhasklfhasfhaskldjjjjjjjjjfhkjaslfjkaskfdlfajfdahfalsdk</p>
+    </div>
+    <div class="box" style=" display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden; 
+            width: 100px;height: 60px;line-height: 20px;">
+        多行文本移出隐藏asdfjle frasefsdzf zg bzcgxdggse安吉物流大师傅 法律框架和干个圣诞节afjaj发生发 ；功夫大师发栅格功夫大师
+    </div> -->
+    <script>
+        // let box = document.querySelector('.box');
+        // box.on = function() {
+        //     alert("我是click");
+        // }
+        window.addEventListener("keydown", function(e) {
+            console.log(e.target);
+            console.log(this);
+        })
+    </script>
+</body>
+
+</html>

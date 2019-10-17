@@ -1,0 +1,490 @@
+body {
+    margin: 0;
+    width: 100%;
+    background: url(../img/bg.png) no-repeat center center/cover;
+    background-attachment: fixed;
+    padding: 0 0.4rem;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 16px;
+}
+
+ul,
+li,
+ol,
+dl,
+dt,
+dd {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+@font-face {
+    font-family: money;
+    src: url(../font/QuartzRegular.ttf);
+}
+
+
+/* 公共部分开始 */
+
+h2 {
+    color: #c5e7ff;
+    font-size: .2rem;
+    height: .8rem;
+    line-height: .8rem;
+    text-align: center;
+}
+
+
+/* 公共部分结束 */
+
+
+/* 导航开始 */
+
+.head {
+    height: .9rem;
+    line-height: .9rem;
+    border-bottom: 1px solid #396e95;
+}
+
+.head-left {
+    float: left;
+    height: 100%;
+    overflow: hidden;
+}
+
+.head-left>span {
+    font-size: 0.36rem;
+    vertical-align: top;
+    height: 100%;
+    display: inline-block;
+}
+
+.content {
+    width: 100%;
+    overflow: hidden;
+    margin: 0.44rem 0 .4rem;
+}
+
+.logo-img {
+    height: .4rem;
+    margin: 0.25rem 0;
+    vertical-align: top;
+}
+
+.head-right {
+    float: right;
+    height: 0.5rem;
+    margin: 0.2rem 0;
+    text-align: center;
+}
+
+.head-right>div {
+    height: 0.25rem;
+    line-height: 0.25rem;
+    font-size: 0.2rem;
+}
+
+.money>.money-left {
+    font-family: money;
+}
+
+
+/* 导航结束 */
+
+
+/* 左侧开始 */
+
+.content-left {
+    width: 25%;
+    float: left;
+}
+
+.today-income {
+    width: 100%;
+    height: 1.8rem;
+    background: url(../img/today-income.png) no-repeat center center/100% 100%;
+}
+
+.tittle {
+    font-size: .18rem;
+    color: #c5e7ff;
+    line-height: .2rem;
+}
+
+.money {
+    height: 1.6rem;
+}
+
+.money-left {
+    height: 100%;
+    width: 65%;
+    text-align: center;
+    line-height: 1.6rem;
+    font-family: money;
+    font-size: .66rem;
+    color: #fff55a;
+    float: left;
+}
+
+.money-right {
+    float: right;
+    width: 35%;
+    padding: 0.2rem 0;
+    text-align: center;
+}
+
+.money-right>* {
+    height: 0.4rem;
+    font-size: .2rem;
+    display: block;
+    text-align: center;
+    line-height: .4rem;
+}
+
+.money-right span:first-child {
+    color: #c5e7ff;
+}
+
+.money-right span:last-child {
+    color: #ff5e5e;
+}
+
+
+/* 停车时长开始 */
+
+.stop-length {
+    margin: 0.2rem 0;
+    width: 100%;
+    height: 3.4rem;
+    background: url(../img/stop-length.png) no-repeat center center/100% 100%;
+}
+
+
+/* 停车时长结束 */
+
+
+/* 设备警告开始 */
+
+.device-warning {
+    width: 100%;
+    height: 3.8rem;
+    background: url(../img/left-right-bg.png) no-repeat center center/100% 100%;
+}
+
+.device-list {
+    height: 3rem;
+    margin: 0 .32rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.device-list-box {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+}
+
+.device-list-item {
+    color: #c5e7ff;
+    font-size: .12rem;
+    margin: .1rem 0;
+}
+
+.device-list-item>.top {
+    height: .28rem;
+}
+
+.device-list-item>.top>.person {
+    float: left;
+    height: .24rem;
+    border-radius: .24rem;
+    font-size: .14rem;
+    line-height: .24rem;
+    border: 1px solid #ff5e5e;
+}
+
+.device-list-item>.top>.person>span:nth-child(1) {
+    background: #ff5e5e;
+    color: #000000;
+    display: block;
+    float: left;
+    height: 100%;
+    border-radius: .24rem;
+    padding: 0 .1rem;
+}
+
+.device-list-item>.top>.person>span:nth-child(2) {
+    padding: 0 .1rem;
+}
+
+.device-list-item>.top>.time {
+    float: right;
+    height: 0.24rem;
+}
+
+.device-list-item>.info {
+    height: .28rem;
+    line-height: .28rem;
+}
+
+.device-list-item>.info>.pos {
+    /* clear: both; */
+    float: left;
+}
+
+.device-list-item>.info>.error {
+    float: right;
+}
+
+
+/* 设备警告结束 */
+
+
+/*  */
+
+
+/* 中间列开始 */
+
+.content-center {
+    width: 50%;
+    float: left;
+    min-height: 500px;
+    padding: 0 0.3rem;
+    box-sizing: border-box;
+}
+
+.map {
+    height: 6.4rem;
+    margin-left: -0.3rem;
+    margin-right: -0.3rem;
+    position: relative;
+}
+
+.stop-photo {
+    width: 100%;
+    height: 3rem;
+    /* margin-top: .2rem; */
+    position: relative;
+    background: url(../img/stop-photo.png) no-repeat center center/100% 100%;
+    overflow: hidden;
+}
+
+.stop-box {
+    position: absolute;
+    height: 100%;
+    width: 20rem;
+}
+
+.stop-box>li {
+    float: left;
+    width: 2rem;
+    height: 100%;
+    background: rgba(0, 0, 0, .3);
+    margin-right: 0.05rem;
+    font-size: 0.14rem;
+    text-align: center;
+    color: #c5e7ff;
+}
+
+.in-outtime {
+    height: .4rem;
+    line-height: .4rem;
+}
+
+.stop-box>li>.img {
+    width: 100%;
+    height: 2rem;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.stop-box>li>.stop-name {
+    height: .3rem;
+    line-height: .3rem;
+    font-size: .1rem;
+}
+
+.stop-box>li>.stop-number {
+    height: .3rem;
+    line-height: .3rem;
+    font-size: .1rem;
+}
+
+
+/* 中间列结束 */
+
+
+/* 右边开始 */
+
+.content-right {
+    width: 25%;
+    float: left;
+}
+
+.content-right>.stop-number {
+    width: 100%;
+    height: 1.8rem;
+}
+
+.stop-col {
+    width: 33.33333%;
+    height: 100%;
+    float: left;
+    padding: 0 4px;
+    box-sizing: border-box;
+}
+
+.stop-col>.stop-col-inner {
+    height: 100%;
+    background-color: #ff5e5e;
+    background: url(../img/stop-number-bg.png) no-repeat center center/cover;
+    text-align: center;
+    overflow: hidden;
+}
+
+.stop-col>.stop-col-inner>div:nth-child(1) {
+    margin-top: .5rem;
+    color: #58e9ff;
+    font-size: .28rem;
+    height: .4rem;
+}
+
+.stop-col>.stop-col-inner>div:nth-child(2) {
+    color: #c5e7ff;
+    font-size: .16rem;
+    height: .4rem;
+}
+
+.content-right>.stop-top {
+    margin: .2rem 0;
+    height: 3.4rem;
+    background: url(../img/stop-length.png) no-repeat center center/100% 100%;
+}
+
+.content-right>.stop-top>.stop-top-box {
+    height: 2.8rem;
+    padding: 0 0.2rem 0.2rem;
+    box-sizing: border-box;
+}
+
+.content-right>.yestday-inio {
+    height: 3.8rem;
+    background: url(../img/stop-length.png) no-repeat center center/100% 100%;
+}
+
+.yestday-inio>.info-list {
+    height: 3rem;
+    margin: 0 .32rem;
+    position: relative;
+    overflow: hidden;
+    font-size: .12rem;
+}
+
+.yestday-inio>.info-list>ul {
+    width: 100%;
+    position: absolute;
+}
+
+.yestday-inio>.info-list>ul li {
+    border-top: 1px dashed #fff;
+    padding: 0.2rem 0;
+}
+
+.yestday-inio>.info-list h3 {
+    font-weight: bold;
+}
+
+.yestday-inio>.info-list ul li .left {
+    float: left;
+}
+
+.yestday-inio>.info-list ul li .right {
+    float: right;
+}
+
+
+/* 右边结束 */
+
+
+/* 提示框开始 */
+
+.map-name {
+    border-style: solid;
+    white-space: nowrap;
+    transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1), top 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    background-color: rgba(50, 50, 50, 0.7);
+    border-width: 1px;
+    border-color: rgb(74, 223, 255);
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: 14px;
+    line-height: 21px;
+    padding: 20px;
+}
+
+.map-name>h2 {
+    color: rgb(74, 223, 255);
+    height: 30px;
+    line-height: 30px;
+    font-size: 1.5em;
+}
+
+.map-name>p {
+    line-height: 30px;
+}
+
+.map-name>.map-money {
+    color: #26f5d5;
+    font-size: 22px;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 0.1rem;
+}
+
+.map-car {
+    width: 80%;
+    height: 40px;
+    background-color: #18233b;
+    margin: 0 10%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin-bottom: 0.1rem;
+}
+
+.map-car-left {
+    float: left;
+    width: 50%;
+    text-align: center;
+    box-sizing: border-box;
+    border-right: 1px solid rgba(74, 223, 255, 0.5);
+}
+
+.map-car-right {
+    text-align: center;
+    float: left;
+    width: 50%;
+    line-height: 20px;
+}
+
+.map-car-bottom {
+    clear: both;
+    width: 100%;
+    height: 0.3rem;
+    font-size: 0.12rem;
+}
+
+.map-car-bottom>span {
+    margin-right: 0.06rem;
+    margin-left: 0.1rem;
+}
+
+
+/* 提示框结束 */

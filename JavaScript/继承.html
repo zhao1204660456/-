@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象的继承</title>
+</head>
+
+<body>
+    <script>
+        function Farher(name) {
+            this.name = function(ff, gg) {
+                console.log(ff + gg);
+            }
+        }
+
+        function Son() {
+            console.log("son");
+        }
+        // Son.prototype = new Farher();
+        // var so = new Son();
+        // console.log(so);
+        // console.log(Son);
+        // console.log(Farher);
+        var fa = new Farher();
+        var so = new Son();
+        //     console.log(so);
+        //     fa.name.call(so, "call", "ggg");
+        //     fa.name.apply(so, ["apply", "kkk"]);
+        //     fa.name.bind(so)("bind", "bbb");
+        //
+    </script>
+</body>
+
+</html>

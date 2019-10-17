@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css公共/swiper.min.css">
+    <style>
+        .box {
+            width: 600px;
+            height: 200px;
+            margin: 0 auto;
+        }
+        
+        .swiper-slide {
+            background-color: violet;
+            color: aliceblue;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div id="thumbs"></div>
+                <div class="swiper-slide">slider1</div>
+                <div class="swiper-slide">slider2</div>
+                <div class="swiper-slide">slider3</div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+<script src="js公共/swiper.min.js"></script>
+<script>
+    var mySwiper = new Swiper('.swiper-container', {
+        effect: 'coverflow',
+        slidesPerView: 3,
+        centeredSlides: true,
+        coverflowEffect: {
+            rotate: 30,
+            stretch: 10,
+            depth: 60,
+            modifier: 2,
+            slideShadows: true
+        },
+    })
+</script>
+<!-- <script language="javascript">
+//     var thumbsSwiper = new Swiper('#thumbs', {
+//         spaceBetween: 10,
+//         slidesPerView: 4,
+//         watchSlidesVisibility: true, //防止不可点击
+//     })
+//     var gallerySwiper = new Swiper('#gallery', {
+//         spaceBetween: 10,
+//         thumbs: {
+//             swiper: thumbsSwiper,
+//         }
+//     })
+ </script> -->

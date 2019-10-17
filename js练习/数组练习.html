@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组练习</title>
+</head>
+
+<body>
+    <script>
+        var arr = [1, 5, 2, 3, 3, 3, 3, 3];
+        var pu = arr.push("p", "u", "s", "h"); //在末尾添加
+        var un = arr.unshift("a", "b"); //在最前面添加
+        var sh = arr.shift(); //只能删除最前面第一个元素
+        var po = arr.pop(); //只能删除最后的一个元素
+        var add = arr.splice(3, 2, 1); //位置 删除个数 追加元素 ..任意位置添加或删除 返回删除元素 先删除再在删除位置天天金元素
+        var joi = arr.join("-"); //连接符 返回新数组 不影响原数组
+        var sli = arr.slice(1, 4); //不影响原数组 返回删除的元素 
+        var con = arr.concat([0, 0, 0], ["l", "l"]); //链接数组 返回链接的新数组 不改变原数组
+        var ind = arr.indexOf(3); //返回原数组该元素的下标，没有则返回-1
+        var las = arr.lastIndexOf(3); //返回倒叙后原数组钙元素的下标，没有则返回-1
+        var sor = arr.sort((a, b) => a - b); //反序 数组排序，改变原数组
+        var sor1 = arr.sort((a, b) => b - a); //倒序
+        //遍历数组  值 下标
+        arr.forEach((value, index) => {
+            console.log(index, value);
+
+        });
+        //过滤数组
+        var fil = arr.filter((value, index) => {
+            return value == 3;
+        })
+
+        var ma = arr.map((value, index) => {
+                return value * 3;
+            })
+            //数组乱序
+        console.log(arr);
+        arr.sort(() => Math.random() - 0.5);
+        console.log(arr[1]);
+    </script>
+
+</body>
+
+</html>

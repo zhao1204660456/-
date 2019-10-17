@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js</title>
+    <!-- <script src="./js/index.js"></script> -->
+    <!-- <style>
+    .box{
+        width: 400px;
+        height: 400px;
+        background-color: fuchsia;
+    }
+    </style> -->
+    <!-- <script>
+        var btn=document.querySelector("div");
+        alert(btn);
+        btn.onclick=function(){
+        alert("鼠标已放入");
+    
+</script> -->
+
+    <style>
+        /* table{
+            border-spacing: 0;
+        } */
+        td{
+            width: 100px;
+            height: 40px;
+            border: 1px solid red;
+            text-align: center;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <script>
+        // var num=1;
+        // document.write(num); 
+        // var nums=new Array;
+        // nums=[1,2,3,4];
+        // document.write(nums);
+
+        // var a=1,b=2,c="ad";
+        // document.write(a+"<br>");
+        // document.write(b+"<br>");
+        // document.write(a+b+"<br>");
+        // document.write(a-b+"<br>");
+        // document.write(a+c+"<br>");
+        // document.write(a-c+"<br>");
+
+        // var str='赵哥说：“你好！”';
+        // var max=Number.MAX_VALUE;
+        // var ini=1/0;
+        // document.write(str);
+        // document.write(max);
+        // document.write(ini);
+
+        // var a=1,b=2;
+        // var c=true;
+        // var d="asd";
+        // var e=null;
+        // var f;
+        // document.write(f+e);
+        //document.write(2&&4);
+        // var a=1;
+        // document.write(++a);
+
+        // var a=1;
+        // var b="wq";
+        // var c="12";
+        // document.write(0!=0);
+        // var a="收到的";
+        // var b=2;
+        // document.write(a&&b); //输出为空
+        // document.write(a>b);
+//         var num = 1;
+// function aa(){
+//   var num = 2;
+//   function bb(){
+//     var num = 3;
+//     function cc(){
+//       num = 4;
+//       alert(num);    // 4
+//     }
+//     cc();
+//     alert(num);        // 4
+//   }
+//   bb();
+//   alert(num);            // 2
+// }
+// aa();
+// alert(num);
+    </script> -->
+    <!-- <div class="box">
+        <button value="btn"></button>
+    </div> -->
+    <!-- 计算是否为闰年 -->
+    <!-- <script>
+     var sum=2007;
+     if(sum%4==0&&sum%100!=0){
+        alert(sum+"为闰年");
+     }else if(sum%400==0){
+         alert(sum+"为闰年")
+     }else{
+        alert(sum+"不是闰年")
+     }
+    </script> -->
+    
+    <!-- 鸡兔同笼问题 -->
+    <!-- <script>
+        var a=35,b=94,i=1;
+        for(i=1;i<=35;i++){
+            if(2*i+4*(a-i)==b){
+                alert("头有"+a+"个，腿有"+b+"条\n"+"鸡有"+i+"只"+"鸡腿共"+2*i+"条"+"\n"+"兔有"+(a-i)+"只"+"兔腿共"+(a-i)*4+"条");
+            }else{
+                i++;
+            }
+        }
+
+    </script> -->
+
+    <!-- switch练习 -->
+    <!-- <script>
+        var a="赵哥"
+        switch(a){
+            case "dsad":alert("dsad");
+                break;
+            case "赵哥":alert("赵哥,你好");
+                break;
+            default:alert("拜拜");
+                break;
+        }
+    </script> -->
+
+    <!-- for循环求1~100的和 -->
+    <!-- <script>
+        var i=1,sum=0;
+        for(i;i<=100;i++){
+            sum+=i;
+        }
+        alert("1~100的和为"+sum);
+    </script> -->
+
+    <!-- 求1~100奇数和 -->
+    <!-- <script>
+        var i=1,sum=0;
+        for(i;i<=100;i+=2){
+            sum+=i;
+            document.write(sum+"<br>");
+        }
+        alert("1~100奇数和为"+sum)
+    </script> -->
+
+    <!-- 求1~100偶数和 -->
+    <!-- <script>
+        var i=2,sum=0;
+        for(i;i<=100;i+=2){
+            sum+=i;
+        }
+        alert("1~100偶数和为"+sum)
+    </script> -->
+
+    <!-- 九九乘法表 -->
+    <!-- <script>
+        var i,j;
+        for(i=1;i<=9;i++){
+            for(j=1;j<=i;j++){
+                document.write(i+"*"+j+"="+i*j+"\t");
+            }
+            document.write("<br>");
+        }
+    </script> -->
+
+    <!-- <script>
+        var i,j=1;
+        for(i=1;i<=7;i++){
+            document.write("第"+(7-i+1)+"天有"+j+"个桃子"+"<br>");
+            j=(j+1)*2;
+        }
+        // document.write(j);
+    </script> -->
+
+    <!-- <script>
+        var str="<table>";
+        for(var i=1;i<=9;i++){
+            str+="<tr>"
+            for(var j=1;j<=i;j++){
+                str+="<td>"+j+"X"+i+"="+i*j+"</td>";
+            }
+            str+="</tr>";
+        }
+        str+="</table>";
+        document.write(str);
+        console.log(str);
+    </script> -->
+
+    <!-- <script>
+        function fn(a,b){
+            var str="<table>";
+            for(var i=1;i<=a;i++){
+                str+="<tr>"
+                for(var j=1;j<=b;j++){
+                    str+="<td></td>";
+                }
+                str+="</tr>";
+            }
+            str+="</table>";
+            document.write(str);
+            // console.log(str);
+        }
+        fn(50,15);
+    </script> -->
+    
+    <!-- <script>
+        function fn(arr){
+            var sum=0;
+            for(var i=0;i<arr.length;i++){
+                sum+=arr[i];
+            }
+            document.write(sum);
+            console.log(sum);
+        }
+        fn([1,2,3,4,9]);
+    </script> -->
+
+    <!-- <script>
+        var num=1254;
+        var fn=new Function('num',document.write(num),document.write(typeof(num)+"<br>")
+        );
+        
+        function fn1(){
+            document.write("你好！"+"<br>");
+        }
+        fn1();
+
+        var fn2=function(){
+            document.write("我很好！");
+        }
+        fn2();
+    </script> -->
+    <!-- <input type="button" name="" id="btn" value="按钮" onclick="alert('点击成功')">
+    <div id="box" style="width: 200px; height: 200px; background-color: fuchsia;" onmouseover="alert('鼠标移入')" onmouseout="alert('鼠标移出')"></div> -->
+
+    <!-- <button onclick='sun()'>
+    点我吧！
+    </button>
+    <script>
+    function sun(){
+        alert("我是阳光");
+    }
+    </script> -->
+    <script>
+        function message(name,age=19,sex='男',...rest){
+            document.write("我叫"+name+",我今年"+age+"岁了，我是个"+sex+"生");
+            if(rest[0]!=null){
+                document.write("爱好："+rest)
+            }
+            // console.write(arguments);
+            // document.write("<br>"+Array.prototype.slice.call(arguments)[1]+"<br>");
+        }
+        // message("赵哥",18,"男");
+        // document.write("<br>");
+        // message("赵哥");
+        // document.write("<br>");
+        // message("赵哥",18,"男","运动","学习");
+    </script>
+</body>
+</html>

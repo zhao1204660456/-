@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>set练习</title>
+</head>
+
+<body>
+    <script>
+        var arr = [1, 2, 1, 2, 2, 2, 5, 7, 8, 1];
+        var s = new Set(arr);
+        // arr.map(x => {
+        //     s.add(x);
+        //     console.log(s);
+        // })
+        console.log(s);
+        var a = s.add(4).add(6);
+        console.log(s);
+        console.log(a);
+        var d = s.delete(5);
+        console.log(s);
+        console.log(d);
+        var h = s.has(6);
+        console.log(s);
+        console.log(h);
+        // s.clear();
+        // console.log(s);
+        s.forEach((value, key) => {
+            console.log(key, value);
+        });
+
+
+
+        // var map = new Map([
+        //     [true, "12"],
+        //     ["gg", "ghg"]
+        // ]).set(9, "pp");
+        // map.set(4, "er");
+
+
+        // var sum = map.size;
+        // // map.set()
+        // console.log(map);
+        // console.log(sum);
+        // console.log(map.get(4));
+        // console.log(map.has("gg"));
+        // console.log(map.has("aa"));
+        // // console.log(map.clear());
+        // console.log(map);
+        // for (let value of map.values()) {
+        //     console.log(value);
+        // }
+        // for (let value of map.keys()) {
+        //     console.log(value);
+        // }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: violet;
+        }
+        
+        .box2 {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: rgb(253, 157, 68);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+    <div class="box2">
+
+    </div>
+</body>
+<script>
+    //将实现某类功能的左右方法封装到一个对象，只要实例化对象，调用对象就可以，保护了代码细节，有利于维护
+    class Show {
+        constructor(box) {
+            this.box = document.querySelector('.box');
+            this.moveX = null;
+            this.moveY = null;
+            this.leftX = 10;
+            this.topY = 10;
+            this.innerWidth = window.innerWidth;
+            this.innerHeight = window.innerHeight;
+
+        }
+        move() {
+            setInterval(() => {
+                this.moveX = this.box.offsetLeft;
+                this.moveY = this.box.offsetTop;
+                if (this.moveX >= this.innerWidth - this.box.offsetWidth || this.moveX < 0) {
+                    this.leftX = -this.leftX;
+                }
+                if (this.moveX >= this.innerWidth - this.box.offsetWidth) {
+                    this.moveX = this.innerWidth - this.box.offsetWidth;
+                }
+                if (this.moveY >= this.innerHeight - this.box.offsetHeight || this.moveY < 0) {
+                    this.topY = -this.topY;
+                }
+                if (this.moveY >= this.innerHeight - this.box.offsetHeight) {
+                    this.moveY = this.innerHeight - this.box.offsetHeight;
+                }
+                this.box.style.left = this.moveX + this.leftX + "px";
+                this.box.style.top = this.moveY + this.topY + "px";
+            }, 40)
+        }
+    }
+    class Show1 extends Show {
+        constructor(a) {
+            this.a = a;
+        }
+    }
+
+    let aa = new Show('box');
+    aa.move();
+    let bb = new Show1('box2');
+    bb.move();
+
+    // var box = document.querySelector('.box');
+    // var leftX = 1,
+    //     topY = 1,
+    //     moveX, moveY;
+    // setInterval(() => {
+    //     moveX = box.offsetLeft;
+    //     moveY = box.offsetTop;
+    //     if (moveX >= innerWidth - box.offsetWidth || moveX < 0) {
+    //         leftX = -leftX;
+    //     }
+    //     if (moveX >= innerWidth - box.offsetWidth) {
+    //         moveX = innerWidth - box.offsetWidth;
+    //     }
+    //     // if (moveX < 0) {
+    //     //     moveX = 0;
+    //     // }
+    //     if (moveY >= innerHeight - box.offsetHeight || moveY < 0) {
+    //         topY = -topY;
+    //     }
+    //     if (moveY >= innerHeight - box.offsetHeight) {
+    //         moveY = innerHeight - box.offsetHeight;
+    //     }
+    //     // if (moveY < 0) {
+    //     //     moveY = 0;
+    //     // }
+
+    //     box.style.left = moveX + leftX + "px";
+    //     box.style.top = moveY + topY + "px";
+    // }, 1)
+
+    //1获取变量
+    //2声明变量speedX保存的box在水平方向的运动速度
+    //3声明变量speedY保存的box在垂直方向的运动速度
+    //4声明变量currentLeft和currentTop保存当前元素的距离左边和顶部的距离（因为需要在党前位置的基础上不断的去增加speed）
+    //5.使用时间函数，每过一段时间获取当前位置保存，然后再讲速度添加，最后给元素添加left、top属性
+</script>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>location</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 40px;
+            background-color: antiquewhite;
+            line-height: 40px;
+            text-align: center;
+        }
+        
+        .vid {
+            width: 200px;
+            height: 260px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        点击跳转
+    </div>
+    <div class="vid">
+        <video src="" width="200" height="260" autoplay></video>
+    </div>
+
+</body>
+<script>
+    // var box = document.querySelector('.box');
+    // box.onclick = () => {
+    //     location.href = "location1.html";
+    // }
+
+    var video = document.querySelector('video');
+    navigator.mediaDevices.getUserMedia({
+            video: {
+                width: 200,
+                height: 260,
+            }
+        })
+        .then(function(res) {
+            video.srcObject = res;
+            video.play();
+        })
+</script>
+
+</html>

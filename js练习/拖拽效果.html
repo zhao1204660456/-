@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拖拽效果</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        .box {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: violet;
+            color: aliceblue;
+            font-size: 24px;
+            line-height: 200px;
+            text-align: center;
+            user-select: none;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="box">
+        点我
+    </div>
+</body>
+<script>
+    var box = document.querySelector('.box');
+    var startx, starty, movex, movey, endx, endy;
+    box.onmousedown = function(e) {
+        var ev = e || event;
+        startx = ev.offsetX;
+        starty = ev.offsetY;
+        box.addEventListener('mousemove', move, false);
+    }
+
+    function move(e) {
+        var ev = e || event;
+        movex = ev.clientX;
+        movey = ev.clientY;
+        console.log(movex, movey);
+        endx = movex - startx;
+        endy = movey - starty;
+        if (endx <= 0) {
+            box.style.left = 0;
+        } else if (endx >= innerWidth - box.offsetWidth) {
+            box.style.left = innerWidth - box.offsetWidth + "px";
+        } else {
+            box.style.left = endx + "px";
+        }
+        if (endy <= 0) {
+            box.style.top = 0;
+        } else if (endy >= innerHeight - box.offsetHeight) {
+            box.style.top = innerHeight - box.offsetHeight + "px";
+        } else {
+            box.style.top = endy + "px";
+        }
+
+        // console.log(endx);
+    }
+    window.onmouseup = function() {
+        box.removeEventListener('mousemove', move, false);
+    }
+</script>
+
+</html>

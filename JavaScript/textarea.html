@@ -1,0 +1,44 @@
+<html>
+
+<head>
+
+    <title>标注</title>
+</head>
+
+<body>
+    <textarea οnselect="SelectText(this)" class="text" cols="30" rows="30">
+    
+       </textarea>
+</body>
+<script>
+    window.οnlοad = function() { //去除空格
+         
+        document.getElementsByClassName('text')[0].innerHTML = document.getElementsByClassName('text')[0].innerHTML.trim();
+    }
+    var selection = window.getSelection();
+
+    function HightLight(e) { //标注上色
+              
+        var reg = new RegExp(e, 'g')      
+        if (e != '') {         
+            document.getElementsByClassName('text')[0].innerHTML = document.getElementsByClassName('text')[0].innerHTML.replace(reg, function(v) {               
+                return v.fontcolor('Red')         
+            });      
+        }
+    }
+
+    function SelectText(e) {   
+        var selecter = selection.toString();   
+        console.log(e);   
+        if (selecter != null && selecter.trim() != "") {    
+            alert(e.selectionStart + selecter + e.selectionEnd);   
+        }    //var oo=document.getElementsByClassName('text')[0].innerHTML;
+            //oo=HightLight(selecter);
+    }
+    //替换文本前与后的空格
+    function trim() {  
+        return this.replace(/(^\s*)|(\s*$)/g, "");
+    }
+</script>
+
+</html>

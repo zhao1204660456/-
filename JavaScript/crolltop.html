@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            height: 1200px;
+        }
+        
+        .bbo {
+            height: 90px;
+            width: 100%;
+            background-color: aquamarine;
+        }
+        
+        .box {
+            position: fixed;
+            left: 0;
+            top: -80px;
+            width: 100%;
+            height: 80px;
+            background-color: violet;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bbo"></div>
+    <div class="box"></div>
+</body>
+<script>
+    var topq = document.querySelector('.box');
+    var bbo = document.querySelector('.bbo');
+    window.onscroll = function() {
+        let scrTop = document.documentElement.scrollTop || document.body.scrollTop;
+        if (scrTop > 100) {
+            topq.style.top = 0;
+        } else {
+            topq.style.top = "-80px";
+        }
+    }
+</script>
+
+</html>
